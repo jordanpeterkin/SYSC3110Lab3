@@ -6,15 +6,18 @@ public class AddressBook {
         this.buddies = new ArrayList<BuddyInfo>();
     }
 
-    public void addBuddy(){
-
+    public void addBuddy(BuddyInfo buddy){
+        buddies.add(buddy);
     }
 
-    public void removeBuddy(){
-
+    public void removeBuddy(BuddyInfo buddy){
+        buddies.remove(buddy);
     }
 
     public static void main(String[] args) {
-        System.out.println("Address Book");
+        BuddyInfo buddy = new BuddyInfo("Tom", "Carleton", "613");
+        AddressBook addressbook = new AddressBook();
+        addressbook.addBuddy(buddy);
+        addressbook.removeBuddy(buddy);
     }
 }
